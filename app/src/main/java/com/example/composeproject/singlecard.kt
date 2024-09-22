@@ -15,17 +15,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.rememberImagePainter
 import com.example.composeproject.ui.theme.ComposeProjectTheme
 
 @Composable
-fun CardImage(description: String
-){
+fun CardImage(article: Article){
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -34,9 +32,10 @@ fun CardImage(description: String
         shape = RoundedCornerShape(15.dp),
     ) {
         Box {
-            Image(painter = painterResource(id = R.drawable.img2),
-                contentDescription = "lamp image",
-                contentScale = ContentScale.Crop
+            Image( painter = rememberImagePainter(data = article.featured_image),
+                contentDescription = article.title,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize()
             )
             Box(
                 modifier = Modifier
@@ -44,16 +43,19 @@ fun CardImage(description: String
                     .padding(12.dp),
                 contentAlignment = Alignment.BottomCenter
             ) {
-                Text(text = description,
-                    style = TextStyle(color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                Text(text = article.title,
+                    style = TextStyle(
+                        color = Color.White,
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold)
                 )
             }
         }
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun CardImagePreview() {
-   CardImage(description = "Amazon forest Image")
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun CardImagePreview() {
+//   CardImage(Article)
+//}
