@@ -1,5 +1,6 @@
-package com.example.composeproject
+package com.example.composeproject.service
 
+import com.example.composeproject.model.Article
 import retrofit2.Call
 import retrofit2.http.GET
 

@@ -1,4 +1,4 @@
-package com.example.composeproject
+package com.example.composeproject.service
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

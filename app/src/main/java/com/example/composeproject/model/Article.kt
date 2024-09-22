@@ -1,4 +1,4 @@
-package com.example.composeproject
+package com.example.composeproject.model
 
 data class Article(
     val id: String,

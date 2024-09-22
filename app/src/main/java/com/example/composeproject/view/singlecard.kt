@@ -1,8 +1,7 @@
-package com.example.composeproject
+package com.example.composeproject.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -20,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberImagePainter
-import com.example.composeproject.ui.theme.ComposeProjectTheme
+import com.example.composeproject.model.Article
 
 @Composable
 fun CardImage(article: Article){
